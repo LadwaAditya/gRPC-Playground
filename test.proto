@@ -1,0 +1,17 @@
+syntax = "proto3"
+
+package test;
+
+message animal{
+    int32 id = 1;
+    string nickname =2;
+}
+
+message request{
+    string nickname = 1;
+}
+
+service TestService{
+    rpc GetAnimal (request) returns (animal);
+    rpc GetAllAnimal (request) returns (stream animal);
+}
